@@ -1,0 +1,163 @@
+/* Add styles here */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    margin: 0 10px;
+    background-color: rgb(255, 118, 140);
+}
+
+/* Amplop utama */
+.amplop {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background-color: rgb(255, 36, 72);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    color: pink;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /* Bagian segitiga atas (penutup amplop) */
+  .amplop::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 60px solid rgb(190, 12, 41);
+    z-index: -15;
+  }
+  
+  /* Isi surat yang terlihat sedikit */
+  .surat {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    width: 180px;
+    height: 90px;
+    background-color: rgb(177, 74, 91);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    z-index: -10;
+  }
+  
+  .animate {
+    top: -80px;
+  }
+  
+  .pencet {
+    font-family: "Gloria Hallelujah";
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .warning {
+    margin-bottom: 90px;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .suratAnimateON {
+    animation: suratAnimateON 1s forwards;
+  }
+  .suratAnimateOFF {
+    animation: suratAnimateOFF .7s ease-in forwards;
+  }
+
+  .isi-surat {
+    position: absolute;
+    min-height: 5000px;
+    right: 0;
+    left: 0;
+    background-color: rgb(177, 74, 91);
+    /* background-color: orange; */
+    transform: scale(0);
+    opacity: 0;
+    padding: 10px;
+  }
+
+  .content-wrap {
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+    padding: 0 3.5px;
+    padding-top: 35px;
+  }
+
+  .close {
+    padding: 5px;
+    border: 2px solid white;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ff4757;
+  }
+
+  .content p:first-child {
+    font-family: "Scheherazade New", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: .5px;
+    margin-bottom: 20px;
+  }
+  
+  .content p {
+    font-size: 12px;
+    margin: 25px 0;
+    font-family: "Coming Soon", cursive;
+    font-weight: 600;
+    font-style: normal;
+    font-style: italic;
+  }
+  
+  /* animasi */
+  @keyframes suratAnimateON {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    } 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes suratAnimateOFF {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    } 100% {
+      transform: scale(0);
+      opacity: 1;
+    }
+  }
